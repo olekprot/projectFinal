@@ -1,5 +1,6 @@
 <?php
     include "_config.php";
+    $TITULO = 'Add New Product';
     if (isset($_GET['submitButton'])) {
         $nombre = $_GET['nombre'];
         $code = $_GET['code'];

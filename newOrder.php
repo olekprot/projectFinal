@@ -1,6 +1,9 @@
+<?php $TITULO = 'NEW ORDER'; ?>
 <?php include "components/_config.php"; ?>
 <?php include "components/_header.php"; ?>
-<?php $TITULO = 'NEW PRODUCT'; ?>
+
+
+
 
             <div id="feedback-form">
                 <h2 class="header"><?php echo $TITULO; ?></h2>

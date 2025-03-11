@@ -1,8 +1,11 @@
-
+<?php 
+    $TITULO = 'Orders List';
+?>
 <?php include_once 'components/_config.php' ?>
 <?php include 'components/_header.php' ?>
 
-<h2>Responsive Table</h2>
+
+<h2><?php echo $TITULO; ?></h2>
 <div class="table-wrapper">
     <table class="fl-table">
         <thead>
