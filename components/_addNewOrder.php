@@ -15,8 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $create_table_sql = "CREATE TABLE `$nombre_order` (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         nombre VARCHAR(50) NOT NULL,
-        price INT(50) NOT NULL,
-        size INT(50),
+        price FLOAT(50) NOT NULL,
+        size FLOAT(50),
         quantity INT(50),
         code VARCHAR(50),
         image VARCHAR(350)

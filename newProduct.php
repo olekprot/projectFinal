@@ -27,7 +27,9 @@
             <label for="order">Elige la tabla:</label>
             <select name="order" id="order" required>
                 <?php foreach ($tables as $tableName): ?>
-                    <option value="<?php echo $tableName; ?>"><?php echo $tableName; ?></option>
+                    <?php if ($tableName !== 'listaOrderes'): ?>
+                        <option value="<?php echo $tableName; ?>"><?php echo $tableName; ?></option>
+                    <?php endif; ?>
                 <?php endforeach; ?>
             </select>
 
