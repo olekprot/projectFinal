@@ -1,21 +1,15 @@
-<?php $TITULO = 'NEW ORDER'; ?>
+
 <?php include "components/_config.php"; ?>
 <?php include "components/_header.php"; ?>
 
-
-
-
             <div id="feedback-form">
-                <h2 class="header"><?php echo $TITULO; ?></h2>
+                <h2 class="header">Nuevo orden</h2>
                 <div>
-                    <form action="components/_addNewProduct.php" method="get">
-                        <input type="text" name="nombre" placeholder="Name" required></input>
-                        <input type="text" name="code" placeholder="Code" required></input>
-                        <input type="text" name="size" placeholder="Size" required></input>
-                        <input type="number" name="quantity" placeholder="Quantity" required></input>
-                        <input type="number" name="price" placeholder="Price" required></input>
-                        <input type="text" name="image" placeholder="Image"required ></input>
-                        <input class="button -sun" type="submit" value="Add New" name="submitButton">
+                    <form action="components/_addNewOrder.php" method="post">
+                        <input type="text" name="nombre_order" placeholder="Nombre del orden" required></input>
+                        <input type="date" name="date_order" placeholder="Fecha del orden" required></input>
+                        <input type="number" name="delivery_order" placeholder="Precio de envio" required></input>
+                        <input class="button -sun" type="submit" value="Agregar nuevo orden" name="submitButton">
                     </form>   
                 </div>
             </div> 

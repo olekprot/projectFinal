@@ -1,4 +1,4 @@
-<?php
+<?php /*
     const SITENAME = 'Project Final Protyniak';
     const TITULO = 'Project Final Protyniak';
     function titulo($siteTitulo = true){
@@ -13,7 +13,7 @@
         }
        
     }
-
+*/
 
 
     //Connection to DB
