@@ -8,10 +8,13 @@ if ($result->num_rows > 0) {
     echo '<tbody>';
     while ($row = $result->fetch_assoc()) {
         echo '<tr>';
-        echo '<td>' . htmlspecialchars($row['nombre_order']) . '</td>';
-        echo '<td>' . htmlspecialchars($row['date_order']) . '</td>';
-        echo '<td>' . htmlspecialchars($row['delivery_order']) . '</td>';
+            echo '<td>' . htmlspecialchars($row['nombre_order']) . '</td>';
+            echo '<td>' . htmlspecialchars($row['date_order']) . '</td>';
+            echo '<td>' . htmlspecialchars($row['delivery_order']) . '</td>';
+            echo '<td> <a href="order.php?id=' . urlencode($row['nombre_order']) . '">Mas informacion</a></td>';
+
         echo '</tr>';
+
     }
     echo '</tbody>';
 } else {

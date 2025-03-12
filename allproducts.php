@@ -22,16 +22,16 @@
                 // Datas del table
                 echo '<tbody>';
                 while ($data = $tableResult->fetch_assoc()) {
-                echo '<tr>
-                <td><img src="'.$data['image'].'"></td>
-                <td>'.$data['nombre'].'</td>
-                <td>'.$data['code'].'</td>
-                <td>'.$data['size'].'</td>
-                <td>'.$data['price'].'</td>
-                <td>'.$data['quantity'].'</td>
-                <td>'.$data['price']*$data['quantity'].'</td>
-                <td>'.$tableName.'</td>
-                </tr>';
+                    echo '<tr>
+                        <td><img src="'.$data['image'].'"></td>
+                        <td>'.$data['nombre'].'</td>
+                        <td>'.$data['code'].'</td>
+                        <td>'.$data['size'].'</td>
+                        <td>'.$data['price'].'</td>
+                        <td>'.$data['quantity'].'</td>
+                        <td>'.$data['price']*$data['quantity'].'</td>
+                        <td>'.$tableName.'</td>
+                    </tr>';
                 }
                 echo '</tbody>';
             }

@@ -1,9 +1,6 @@
-
-<?php include_once 'components/_config.php' ?>
-<?php include 'components/_header.php' ?>
+<?php include "components/_header.php"; ?>
 
 
-<h2>Sistema de control de inventario</h2>
 <div class="table-wrapper">
     <table class="fl-table">
         <thead>
@@ -15,11 +12,12 @@
             <th>Precio</th>
             <th>Cantidad</th>
             <th>Precio total</th>
-            <th>Nombre del order</th>
+            <th>Actividades</th>
         </tr>
         </thead>
-            <?php include 'allproducts.php'?>
-    </table>
+            <?php include 'components/_infoOrder.php'?>
+    </div>
 </div>
 
-<?php include 'components/_footer.php' ?>
+
+<?php include "components/_footer.php"; ?>

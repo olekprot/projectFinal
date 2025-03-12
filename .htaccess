@@ -4,6 +4,9 @@ RewriteEngine On
 ErrorDocument 404 assets/apartados/error404.php
 
 #redirección
+
+
+
 RewriteEngine On
 RewriteRule ^inicio$ index.php [L]
 RewriteRule ^productos$ productos.php [L]
