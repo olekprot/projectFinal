@@ -67,3 +67,47 @@ document.getElementById('closeModal').addEventListener('click', function () {
     document.getElementById('editModal').style.display = 'none';
     document.getElementById('modalBackdrop').style.display = 'none';
 });
+
+
+
+document.querySelectorAll('.delete-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        const deleteModal = document.getElementById('deleteModal');
+        const modalBackdrop = document.getElementById('modalBackdrop');
+        const confirmDelete = document.getElementById('confirmDelete');
+
+        // Показ модального окна
+        deleteModal.style.display = 'block';
+        modalBackdrop.style.display = 'block';
+
+        // Получаем ID элемента для удаления
+        const itemId = this.getAttribute('data-id');
+
+        // Подтверждение удаления
+        confirmDelete.onclick = function () {
+            fetch(`../finalProject/components/_deleteProduct.php?id=${itemId}`, { method: 'POST' })
+                .then(response => response.text())
+                .then(result => {
+                    console.log(result);
+                    alert(result);
+
+                    // Закрытие модального окна
+                    deleteModal.style.display = 'none';
+                    modalBackdrop.style.display = 'none';
+
+                    // Удаление строки из таблицы
+                    document.querySelector(`button[data-id="${itemId}"]`).closest('tr').remove();
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                    alert('Ошибка при удалении элемента.');
+                });
+        };
+
+        // Отмена удаления
+        document.getElementById('cancelDelete').onclick = function () {
+            deleteModal.style.display = 'none';
+            modalBackdrop.style.display = 'none';
+        };
+    });
+});

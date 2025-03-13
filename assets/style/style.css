@@ -142,7 +142,19 @@ header ul li a:hover{
   #feedback-form input[type=submit] {
     margin-top: 15px;
   }
-
+  /*MODAL*/
+  #editModal,
+  #deleteModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    background-color: var(--color2);
+  }
   #modalBackdrop {
     display: none;
     position: fixed;
@@ -171,7 +183,6 @@ header ul li a:hover{
     padding: 20px;
   }
 
-
   /*Footer*/
   footer ul{
     display: flex;
@@ -195,7 +206,15 @@ header ul li a:hover{
 
 
 /*Button*/
-
+.delete-btn {
+    background-color: red;
+    color: var(--color1);
+    border: none;
+    padding: 7px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+}
 .edit-btn,
 .mas-btn {
     background-color: blue;
@@ -220,6 +239,7 @@ header ul li a:hover{
         cursor: pointer;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
         transition: background-color 0.3s ease, transform 0.2s ease; 
+        float: right;
     }
 
     #closeModal:hover,
@@ -234,6 +254,37 @@ header ul li a:hover{
     .mas-btn:active {
         background-color: rgb(0, 0, 132); 
         transform: scale(0.95); 
+    }
+
+    #confirmDelete {
+        background-color: green;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        margin: 5px 5px 0 0;
+        cursor: pointer;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+        transition: background-color 0.3s ease, transform 0.2s ease; 
+    }
+    #cancelDelete{
+       background-color: gray;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        margin: 5px 0 0 5px;
+        cursor: pointer;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+        transition: background-color 0.3s ease, transform 0.2s ease; 
+    }
+    #confirmDelete:hover {
+        background-color: rgb(0, 97, 0);
+        transform: scale(1.05); 
+    }
+    #cancelDelete:hover {
+        background-color: rgb(107, 105, 105);
+        transform: scale(1.05); 
     }
 
 /* Responsive */

@@ -21,30 +21,38 @@ if (isset($_GET['id'])) {
                         <td>' . htmlspecialchars($row['quantity']) . '</td>
                         <td>' . htmlspecialchars($row['price'] * $row['quantity']) . '</td>
                         <td>
-                        <a href="#" class="edit-btn" 
-                           data-id="' . $row['id'] . '" 
-                           data-nombre="' . htmlspecialchars($row['nombre']) . '" 
-                           data-code="' . htmlspecialchars($row['code']) . '" 
-                           data-size="' . htmlspecialchars($row['size']) . '" 
-                           data-price="' . htmlspecialchars($row['price']) . '" 
-                           data-quantity="' . htmlspecialchars($row['quantity']) . '" 
-                           data-image="' . htmlspecialchars($row['image']) . '"
-                           data-table="' . htmlspecialchars($tableName) . '">
-                           Cambiar
-                        </a>
-                        <div id="editModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; border-radius: 5px; z-index: 1000;">
-                            <button id="closeModal" style="float: right;">x</button>
-                            <div id="feedback-form">
-                                <form id="editForm"></form>
+                            <a href="#" class="edit-btn" 
+                            data-id="' . $row['id'] . '" 
+                            data-nombre="' . htmlspecialchars($row['nombre']) . '" 
+                            data-code="' . htmlspecialchars($row['code']) . '" 
+                            data-size="' . htmlspecialchars($row['size']) . '" 
+                            data-price="' . htmlspecialchars($row['price']) . '" 
+                            data-quantity="' . htmlspecialchars($row['quantity']) . '" 
+                            data-image="' . htmlspecialchars($row['image']) . '"
+                            data-table="' . htmlspecialchars($tableName) . '">
+                            Cambiar
+                            </a>
+                            <div id="editModal">
+                                <button id="closeModal">x</button>
+                                <div id="feedback-form">
+                                    <form id="editForm"></form>
+                                </div>
                             </div>
-                        </div>
-                        <div id="modalBackdrop"></div>
-                    </td>         
+                            <div id="modalBackdrop"></div>
+
+                        </td>
+                        <td>
+                            <button class="delete-btn" data-id="' . $row['id'] . '">Borrar</button>
+                            <div id="deleteModal">
+                                <p>¿Está seguro que desea eliminar este elemento?</p>
+                                <button id="confirmDelete">Si</button>
+                                <button id="cancelDelete">No</button>
+                            </div>
+                            <div id="modalBackdrop"></div>
+                        </td>         
                     </tr>';
         }
         echo '</tbody></table>
-        
-        
         </div>';
     } else {
         echo '<p>No hay datos en la tabla: ' . htmlspecialchars($tableName) . '</p>';
