@@ -24,16 +24,17 @@
             <input type="number" name="price" placeholder="Precio" required>
             <input type="text" name="image" placeholder="Imagine" required>
             
-            <label for="order">Elige la tabla:</label>
-            <select name="order" id="order" required>
-                <?php foreach ($tables as $tableName): ?>
-                    <?php if ($tableName !== 'listaOrderes'): ?>
-                        <option value="<?php echo $tableName; ?>"><?php echo $tableName; ?></option>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            </select>
-
-            <input class="button -sun" type="submit" value="Agregar nuevo producto" name="submitButton">
+           
+            <div class="box">
+                <select name="order" id="order"  required>
+                    <?php foreach ($tables as $tableName): ?>
+                        <?php if ($tableName !== 'listaOrderes'): ?>
+                            <option value="<?php echo $tableName; ?>"><?php echo $tableName; ?></option>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </select>
+            </div>          
+            <input class="mas-btn" type="submit" value="Agregar nuevo producto" name="submitButton">
         </form>
     </div>
 </div>

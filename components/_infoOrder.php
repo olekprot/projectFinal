@@ -10,6 +10,7 @@ if (isset($_GET['id'])) {
     $result = $conn->query($query);
 
     if ($result && $result->num_rows > 0) {
+        echo '<h3>Nombre de la tabla: '.$tableName.'</h3>';
             while ($row = $result->fetch_assoc()) {
                     echo '<tr>
                         <td><img src="' . htmlspecialchars($row['image']) . '" alt="Image"></td>
@@ -34,12 +35,10 @@ if (isset($_GET['id'])) {
                         <div id="editModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; border-radius: 5px; z-index: 1000;">
                             <button id="closeModal" style="float: right;">x</button>
                             <div id="feedback-form">
-                            <form id="editForm">
-                                
-                            </form>
+                                <form id="editForm"></form>
                             </div>
                         </div>
-                        <div id="modalBackdrop" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999;"></div>
+                        <div id="modalBackdrop"></div>
                     </td>         
                     </tr>';
         }

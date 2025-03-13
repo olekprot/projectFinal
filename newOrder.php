@@ -9,7 +9,7 @@
                         <input type="text" name="nombre_order" placeholder="Nombre del orden" required></input>
                         <input type="date" name="date_order" placeholder="Fecha del orden" required></input>
                         <input type="number" name="delivery_order" placeholder="Precio de envio" required></input>
-                        <input class="button -sun" type="submit" value="Agregar nuevo orden" name="submitButton">
+                        <input class="mas-btn" type="submit" value="Agregar nuevo orden" name="submitButton">
                     </form>   
                 </div>
             </div> 

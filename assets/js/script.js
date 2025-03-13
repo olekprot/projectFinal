@@ -15,14 +15,15 @@ document.querySelectorAll('.edit-btn').forEach(button => {
         // Formulario
         const form = document.getElementById('editForm');
         form.innerHTML = `
+            <h2>Editar Producto</h2>
             <input type="hidden" name="id" value="${id}">
             <input type="hidden" name="tableName" value="${tableName}">
-            <label>Nombre: <input type="text" name="nombre" value="${nombre}"></label><br>
-            <label>Code: <input type="text" name="code" value="${code}"></label><br>
-            <label>Size: <input type="text" name="size" value="${size}"></label><br>
-            <label>Price: <input type="text" name="price" value="${price}"></label><br>
-            <label>Quantity: <input type="text" name="quantity" value="${quantity}"></label><br>
-            <label>Image: <input type="text" name="image" value="${image}"></label><br>
+            <label>Nombre: <input type="text" name="nombre" value="${nombre}"></label>
+            <label>Code: <input type="text" name="code" value="${code}"></label>
+            <label>Size: <input type="text" name="size" value="${size}"></label>
+            <label>Price: <input type="text" name="price" value="${price}"></label>
+            <label>Quantity: <input type="text" name="quantity" value="${quantity}"></label>
+            <label>Image: <input type="text" name="image" value="${image}"></label>
             <button type="submit" class="edit-btn" id="saveChanges">Guardar Cambios</button>
         `;
 
