@@ -24,11 +24,11 @@ if (isset($_GET['id'])) {
                         <form action="components/_deleteProduct.php" method="POST" style="display:inline;">
                             <input type="hidden" name="tableName" value="' . htmlspecialchars($tableName) . '">
                             <input type="hidden" name="id" value="' . htmlspecialchars($row['id']) . '">
-                            <button type="submit" style="background-color:red; color:white; border:none; cursor:pointer;">Удалить</button>
+                            <button type="submit" style="background-color:red; color:white; border:none; cursor:pointer;">Borrar</button>
                         </form>
                         
                         <!-- Кнопка "Изменить" -->
-                        <a href="components/_editProduct.php?tableName=' . urlencode($tableName) . '&id=' . urlencode($row['id']) . '" style="background-color:blue; color:white; padding:5px; text-decoration:none; border-radius:3px;">Изменить</a>
+                        <a href="components/_editProduct.php?tableName=' . urlencode($tableName) . '&id=' . urlencode($row['id']) . '" style="background-color:blue; color:white; padding:5px; text-decoration:none; border-radius:3px;">Cambiar</a>
                     </td>                
                     </tr>';
         }

@@ -1,7 +1,10 @@
 :root {
     --color1: white;
-    --color2: #f8f8f8; 
+    --color2: #f8f8f8;
+    
+    
 }
+
 
 *{
     box-sizing: border-box;
