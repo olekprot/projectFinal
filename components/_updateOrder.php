@@ -1,14 +1,17 @@
 <?php
 include "../components/_config.php";
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-// Проверяем, была ли форма отправлена
+// Comprobando si el formulario fue enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Получаем данные из POST-запроса
-    $id = $_POST['id']; // Убедитесь, что поле id передается
+
+    $tableName = $_POST['tableName'] ?? '';
+    
+    // Comprobación de la corrección del nombre de la tabla
+    if (!preg_match('/^[a-zA-Z0-9_]+$/', $tableName)) {
+        die("Nombre de tabla no válido!");
+    }
+    //Obtención de datos de una solicitud POST
+    $id = $_POST['id'];
     $nombre = $_POST['nombre'];
     $code = $_POST['code'];
     $size = $_POST['size'];
@@ -17,20 +20,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $image = $_POST['image'];
 
     
-    // Обновляем данные в базе данных
-    $stmt = $conn->prepare("UPDATE order1 SET nombre = ?, code = ?, size = ?, price = ?, quantity = ?, image = ? WHERE id = ?");
+    // Actualización de datos
+    $stmt = $conn->prepare("UPDATE `$tableName` SET nombre = ?, code = ?, size = ?, price = ?, quantity = ?, image = ? WHERE id = ?");
     $stmt->bind_param("sssdiss", $nombre, $code, $size, $price, $quantity, $image, $id);
 
     if ($stmt->execute()) {
-        echo "Данные успешно обновлены!";
+        echo "Los datos se han actualizado correctamente.";
     } else {
-        echo "Ошибка обновления данных: " . $stmt->error;
+        echo "Un error ocurrió al actualizar los datos: " . $stmt->error;
     }
 
 
     $stmt->close();
     $conn->close();
 } else {
-    echo "Некорректный метод запроса.";
+    echo "No corresponde la solicitud.";
 }
 ?>

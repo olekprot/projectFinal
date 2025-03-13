@@ -28,11 +28,11 @@ if (isset($_GET['id'])) {
                            data-price="' . htmlspecialchars($row['price']) . '" 
                            data-quantity="' . htmlspecialchars($row['quantity']) . '" 
                            data-image="' . htmlspecialchars($row['image']) . '"
-                           style="background-color: blue; color: white; padding: 5px; text-decoration: none; border-radius: 3px;">
+                           data-table="' . htmlspecialchars($tableName) . '">
                            Cambiar
                         </a>
                         <div id="editModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; border-radius: 5px; z-index: 1000;">
-                            <button id="closeModal" style="float: right;">Закрыть</button>
+                            <button id="closeModal" style="float: right;">x</button>
                             <div id="feedback-form">
                             <form id="editForm">
                                 
