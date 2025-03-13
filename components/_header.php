@@ -13,6 +13,7 @@
 <body>
     <header>
         <nav>
+            <h3 class="logo">PLAYPRO</h3>
             <ul>
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="orders.php">Ordenes</a></li>

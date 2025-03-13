@@ -9,6 +9,7 @@
             <th>Nombre del orden</th>
             <th>Fecha del orden</th>
             <th>Precio de envio</th>
+            <th>Informacion</th>
         </tr>
         </thead>
             <?php include 'components/_ordersList.php'?>

@@ -17,6 +17,15 @@
 
 
     //Connection to DB
+    /*LOCAL CONNECTION*/
+    /*
+    $host ='localhost';
+    $user ='root';
+    $pass ='root';
+    $dbna ='tiendazaya';
+*/
+    /* WEB CONNECTION*/
+    
     $host ='localhost';
     $user ='myprotyniac4';
     $pass ='H6f4C2XB';

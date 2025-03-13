@@ -19,17 +19,28 @@ if (isset($_GET['id'])) {
                         <td>' . htmlspecialchars($row['price']) . '</td>
                         <td>' . htmlspecialchars($row['quantity']) . '</td>
                         <td>' . htmlspecialchars($row['price'] * $row['quantity']) . '</td>
-                        <<td>
-                        <!-- Кнопка "Удалить" -->
-                        <form action="components/_deleteProduct.php" method="POST" style="display:inline;">
-                            <input type="hidden" name="tableName" value="' . htmlspecialchars($tableName) . '">
-                            <input type="hidden" name="id" value="' . htmlspecialchars($row['id']) . '">
-                            <button type="submit" style="background-color:red; color:white; border:none; cursor:pointer;">Borrar</button>
-                        </form>
-                        
-                        <!-- Кнопка "Изменить" -->
-                        <a href="components/_editProduct.php?tableName=' . urlencode($tableName) . '&id=' . urlencode($row['id']) . '" style="background-color:blue; color:white; padding:5px; text-decoration:none; border-radius:3px;">Cambiar</a>
-                    </td>                
+                        <td>
+                        <a href="#" class="edit-btn" 
+                           data-id="' . $row['id'] . '" 
+                           data-nombre="' . htmlspecialchars($row['nombre']) . '" 
+                           data-code="' . htmlspecialchars($row['code']) . '" 
+                           data-size="' . htmlspecialchars($row['size']) . '" 
+                           data-price="' . htmlspecialchars($row['price']) . '" 
+                           data-quantity="' . htmlspecialchars($row['quantity']) . '" 
+                           data-image="' . htmlspecialchars($row['image']) . '"
+                           style="background-color: blue; color: white; padding: 5px; text-decoration: none; border-radius: 3px;">
+                           Cambiar
+                        </a>
+                        <div id="editModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; border-radius: 5px; z-index: 1000;">
+                            <button id="closeModal" style="float: right;">Закрыть</button>
+                            <div id="feedback-form">
+                            <form id="editForm">
+                                
+                            </form>
+                            </div>
+                        </div>
+                        <div id="modalBackdrop" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999;"></div>
+                    </td>         
                     </tr>';
         }
         echo '</tbody></table>
