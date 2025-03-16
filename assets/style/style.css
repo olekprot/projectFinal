@@ -214,6 +214,11 @@ header ul li a:hover{
     border-radius: 3px;
     transition: background-color 0.3s ease, transform 0.2s ease; 
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
+}
+.delete-btn:hover {
+    background-color: rgb(127, 41, 41);
+    transform: scale(1.05); 
 }
 .edit-btn,
 .mas-btn {
@@ -221,6 +226,7 @@ header ul li a:hover{
     color: var(--color1); 
     padding: 7px;
     text-decoration: none; 
+    cursor: pointer;
     border-radius: 3px;
     border: none;
     transition: background-color 0.3s ease, transform 0.2s ease; 

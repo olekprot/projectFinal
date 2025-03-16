@@ -12,7 +12,6 @@
             <th>Precio</th>
             <th>Cantidad</th>
             <th>Precio total</th>
-            <th>Actividades</th>
         </tr>
         </thead>
             <?php include 'components/_infoOrder.php'?>
