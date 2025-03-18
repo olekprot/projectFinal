@@ -1,3 +1,4 @@
+<? const TITULO ='Lista de los ordenes';?>
 <?php include "components/_header.php"; ?>
 
 

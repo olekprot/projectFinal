@@ -1,22 +1,23 @@
-<? const TITULO ='Orden';?>
+<? const TITULO ='Finances';?>
 <?php include "components/_header.php"; ?>
 
 
+<h2>Resultados Finances</h2>
 <div class="table-wrapper">
     <table class="fl-table">
-        <thead>
+        <thead> Order 1
         <tr>
             <th>Imagen</th>
             <th>Nombre</th>
-            <th>Codigo</th>
-            <th>Talla</th>
             <th>Precio</th>
             <th>Cantidad</th>
-            <th>Precio total</th>
+            <th>Costo de compra</th>
+            <th>Vendido</th>
+            <th>Ganancia</th>
         </tr>
         </thead>
-            <?php include 'components/_infoOrder.php'?>
-    </div>
+            <?php include 'components/_resultados.php'?>
+    </table>
 </div>
 
 

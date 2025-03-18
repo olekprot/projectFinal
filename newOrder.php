@@ -1,4 +1,4 @@
-
+<? const TITULO ='Orden nuevo';?>
 <?php include "components/_config.php"; ?>
 <?php include "components/_header.php"; ?>
 

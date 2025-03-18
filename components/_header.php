@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITLE</title>
+    <title><?=TITULO?></title>
     <link type="image/x-icon" href="assets/img/favicon.ico" rel="shortcut icon">
     <link type="Image/x-icon" href="assets/img/favicon.ico" rel="icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">

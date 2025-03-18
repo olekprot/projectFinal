@@ -1,4 +1,4 @@
-
+<? const TITULO ='Inicio';?>
 <?php include_once 'components/_config.php' ?>
 <?php include 'components/_header.php' ?>
 

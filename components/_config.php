@@ -1,4 +1,8 @@
-<?php /*
+<?php 
+    const TITULO ='Project Final Protyniak';
+
+
+/*
     const SITENAME = 'Project Final Protyniak';
     const TITULO = 'Project Final Protyniak';
     function titulo($siteTitulo = true){
