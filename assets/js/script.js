@@ -1,3 +1,5 @@
+/*UPDATE*/
+
 document.querySelectorAll('.edit-btn').forEach(button => {
     button.addEventListener('click', function (event) {
         event.preventDefault(); // Cancelar la transición de enlace estándar
@@ -67,43 +69,63 @@ document.getElementById('closeModal').addEventListener('click', function () {
     document.getElementById('editModal').style.display = 'none';
     document.getElementById('modalBackdrop').style.display = 'none';
 });
-
+/*END UPDATE*/
 
 /*DELETE*/
 
-document.querySelectorAll('.delete-btn').forEach(input => {
-    input.addEventListener('click', function (event) {
+document.querySelectorAll('.delete-btn').forEach(button => {
+    button.addEventListener('click', function (event) {
         event.preventDefault();
 
         const deleteModal = document.getElementById('deleteModal');
         const modalBackdrop = document.getElementById('modalBackdrop');
         const confirmDelete = document.getElementById('confirmDelete');
+        const cancelDelete = document.getElementById('cancelDelete');
 
-        // Показ модального окна
+        // Mostrar una ventana modal
         deleteModal.style.display = 'block';
         modalBackdrop.style.display = 'block';
 
-        // Сохранение текущей формы
+        // Recibimos datos para el envío
         const form = this.closest('form');
+        const formData = new FormData(form);
+        const queryString = new URLSearchParams(formData).toString();
 
-        // Подтверждение удаления
+        // Confirmar eliminación
         confirmDelete.onclick = function () {
-            // Закрытие модального окна
-            deleteModal.style.display = 'none';
-            modalBackdrop.style.display = 'none';
+            fetch(`components/_deleteProduct.php?${queryString}`, { method: 'GET' })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.status === 'success') {
+                        alert(result.message); // Ventana modal con éxito
+                        window.location.reload(); // Recargar página
+                    } else {
+                        alert(result.message); // Ventana modal con error
+                    }
 
-            // Отправка формы
-            form.submit();
+                    // Cerrar la ventana modal
+                    deleteModal.style.display = 'none';
+                    modalBackdrop.style.display = 'none';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error al eliminar elemento.');
+
+                    // Cerrar la ventana modal
+                    deleteModal.style.display = 'none';
+                    modalBackdrop.style.display = 'none';
+                });
         };
 
-        // Отмена удаления
-        document.getElementById('cancelDelete').onclick = function () {
+        // Cancelar eliminación
+        cancelDelete.onclick = function () {
             deleteModal.style.display = 'none';
             modalBackdrop.style.display = 'none';
         };
     });
 });
 
+/*END DELETE*/
 
 
 

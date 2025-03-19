@@ -39,21 +39,16 @@ if (isset($_GET['nombre_order'])) {
                                 </div>
                             </div>
                             <div id="modalBackdrop"></div>
-
                         </td>
                         <td>
-                          
-                                        <form id="deleteForm" action="components/_deleteProduct.php" method="get">
-                                            <input type="hidden" name="id" value="' . $row['id'] . '">
-                                            <input type="hidden" name="tableName" value="' . htmlspecialchars($tableName) . '">
-                                            <input class="delete-btn" type="submit" value="Borrar">
-                                        </form>
-                                    
+                            <form id="deleteForm" action="components/_deleteProduct.php" method="get">
+                                <input type="hidden" name="id" value="' . $row['id'] . '">
+                                <input type="hidden" name="tableName" value="' . htmlspecialchars($tableName) . '">
+                                <input class="delete-btn" type="submit" value="Borrar">
+                            </form>
                             <div id="deleteModal">
                                 <p>¿Está seguro que desea eliminar este elemento?</p>
-                                <button id="confirmDelete">
-                                    Si
-                                </button>
+                                <button id="confirmDelete">Si</button>
                                 <button id="cancelDelete">No</button>
                             </div>
                             <div id="modalBackdrop"></div>

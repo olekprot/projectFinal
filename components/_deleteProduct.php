@@ -1,39 +1,41 @@
 <?php
 include "../components/_config.php";
 
-
-
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-
     $tableName = $_GET['tableName'] ?? '';
     $id = $_GET['id'] ?? '';
 
     if (!empty($id) && !empty($tableName)) {
-        // Comprobación de la corrección del nombre de la tabla
-        $allowedTables = ['order1', 'orden2', 'order5']; // Lista de las tablas
-        if (!in_array($tableName, $allowedTables)) {
-            echo "Nombre de la tabla no es coorecta!";
-            exit;
-        }
+        $stmt = $conn->prepare("SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ?");
+        $databaseName = 'tiendazaya'; // Nombre de la basa de datos
+        $stmt->bind_param("ss", $databaseName, $tableName);
+        $stmt->execute();
+        $stmt->bind_result($tableExists);
+        $stmt->fetch();
+        $stmt->close();
 
-        // Выполняем удаление
+    if ($tableExists == 0) {
+        echo json_encode(['status' => 'error', 'message' => 'Nombre de la tabla no es correcta!']);
+        exit;
+    }
+
         $stmt = $conn->prepare("DELETE FROM `$tableName` WHERE id = ?");
         $stmt->bind_param("i", $id);
 
         if ($stmt->execute()) {
-            echo "Элемент успешно удалён из таблицы $tableName!";
+            echo json_encode(['status' => 'success', 'message' => "El elemento se eliminó correctamente de la tabla. $tableName!"]);
         } else {
-            echo "Ошибка при удалении элемента: " . $stmt->error;
+            echo json_encode(['status' => 'error', 'message' => "Error al eliminar elemento:" . $stmt->error]);
         }
 
         $stmt->close();
     } else {
-        echo "ID de elemento o nombre de tabla no especificado.";
-        echo "ID =: " . $id . ", nombre de la tabla =: " . $tableName;
+        echo json_encode(['status' => 'error', 'message' => "ID de elemento o nombre de tabla no especificado."]);
     }
 
     $conn->close();
 } else {
-    echo "El metodo de solicitud no es correcto.";
+    echo json_encode(['status' => 'error', 'message' => "El metodo de solicitud no es correcto."]);
 }
+
 ?>
