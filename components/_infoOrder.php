@@ -2,8 +2,8 @@
 include "../components/_config.php"; 
 
 // Compruebe que se pasa el parámetro id
-if (isset($_GET['id'])) {
-    $tableName = $_GET['id'];
+if (isset($_GET['nombre_order'])) {
+    $tableName = $_GET['nombre_order'];
 
     // Ejecutamos una consulta para obtener datos de la tabla
     $query = "SELECT * FROM `$tableName`";
@@ -21,7 +21,7 @@ if (isset($_GET['id'])) {
                         <td>' . htmlspecialchars($row['quantity']) . '</td>
                         <td>' . htmlspecialchars($row['price'] * $row['quantity']) . '</td>
                         <td>
-                            <a href="#" class="edit-btn" 
+                            <button class="edit-btn" 
                             data-id="' . $row['id'] . '" 
                             data-nombre="' . htmlspecialchars($row['nombre']) . '" 
                             data-code="' . htmlspecialchars($row['code']) . '" 
@@ -31,7 +31,7 @@ if (isset($_GET['id'])) {
                             data-image="' . htmlspecialchars($row['image']) . '"
                             data-table="' . htmlspecialchars($tableName) . '">
                             Cambiar
-                            </a>
+                            </button>
                             <div id="editModal">
                                 <button id="closeModal">x</button>
                                 <div id="feedback-form">
@@ -42,10 +42,18 @@ if (isset($_GET['id'])) {
 
                         </td>
                         <td>
-                            <button class="delete-btn" data-id="' . $row['id'] . '">Borrar</button>
+                          
+                                        <form id="deleteForm" action="components/_deleteProduct.php" method="get">
+                                            <input type="hidden" name="id" value="' . $row['id'] . '">
+                                            <input type="hidden" name="tableName" value="' . htmlspecialchars($tableName) . '">
+                                            <input class="delete-btn" type="submit" value="Borrar">
+                                        </form>
+                                    
                             <div id="deleteModal">
                                 <p>¿Está seguro que desea eliminar este elemento?</p>
-                                <button id="confirmDelete">Si</button>
+                                <button id="confirmDelete">
+                                    Si
+                                </button>
                                 <button id="cancelDelete">No</button>
                             </div>
                             <div id="modalBackdrop"></div>

@@ -69,9 +69,12 @@ document.getElementById('closeModal').addEventListener('click', function () {
 });
 
 
+/*DELETE*/
 
-document.querySelectorAll('.delete-btn').forEach(button => {
-    button.addEventListener('click', function () {
+document.querySelectorAll('.delete-btn').forEach(input => {
+    input.addEventListener('click', function (event) {
+        event.preventDefault();
+
         const deleteModal = document.getElementById('deleteModal');
         const modalBackdrop = document.getElementById('modalBackdrop');
         const confirmDelete = document.getElementById('confirmDelete');
@@ -80,28 +83,17 @@ document.querySelectorAll('.delete-btn').forEach(button => {
         deleteModal.style.display = 'block';
         modalBackdrop.style.display = 'block';
 
-        // Получаем ID элемента для удаления
-        const itemId = this.getAttribute('data-id');
+        // Сохранение текущей формы
+        const form = this.closest('form');
 
         // Подтверждение удаления
         confirmDelete.onclick = function () {
-            fetch(`../finalProject/components/_deleteProduct.php?id=${itemId}`, { method: 'POST' })
-                .then(response => response.text())
-                .then(result => {
-                    console.log(result);
-                    alert(result);
+            // Закрытие модального окна
+            deleteModal.style.display = 'none';
+            modalBackdrop.style.display = 'none';
 
-                    // Закрытие модального окна
-                    deleteModal.style.display = 'none';
-                    modalBackdrop.style.display = 'none';
-
-                    // Удаление строки из таблицы
-                    document.querySelector(`button[data-id="${itemId}"]`).closest('tr').remove();
-                })
-                .catch(error => {
-                    console.error('Ошибка:', error);
-                    alert('Ошибка при удалении элемента.');
-                });
+            // Отправка формы
+            form.submit();
         };
 
         // Отмена удаления
@@ -111,5 +103,7 @@ document.querySelectorAll('.delete-btn').forEach(button => {
         };
     });
 });
+
+
 
 
