@@ -1,7 +1,7 @@
 <? const TITULO ='Orden';?>
 <?php include "components/_header.php"; ?>
 
-
+    
 <div class="table-wrapper">
     <table class="fl-table">
         <thead>

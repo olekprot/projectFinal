@@ -10,7 +10,20 @@ if (isset($_GET['nombre_order'])) {
     $result = $conn->query($query);
 
     if ($result && $result->num_rows > 0) {
-        echo '<h3>Nombre de la tabla: '.$tableName.'</h3>';
+        echo '<div class="table-container-download">';
+            echo '<h3>Nombre de la tabla: '.$tableName.'</h3>';
+            echo '<div class="form-container">';
+                echo '<form action="components\_exportOrder.php" method="POST">
+                        <input type="hidden" name="tableName" value="'. htmlspecialchars($tableName) . '">
+                        <label for="format">Seleccionar formato:</label>
+                        <select name="format" id="format" required>
+                            <option value="csv">CSV</option>
+                            <option value="json">JSON</option>
+                        </select>
+                        <input class="download-btn" type="submit" value="Descargar">
+                    </form>';
+                echo '</div>';
+        echo '</div>';
             while ($row = $result->fetch_assoc()) {
                     echo '<tr>
                         <td><img src="' . htmlspecialchars($row['image']) . '" alt="Image"></td>
@@ -22,15 +35,15 @@ if (isset($_GET['nombre_order'])) {
                         <td>' . htmlspecialchars($row['price'] * $row['quantity']) . '</td>
                         <td>
                             <button class="edit-btn" 
-                            data-id="' . $row['id'] . '" 
-                            data-nombre="' . htmlspecialchars($row['nombre']) . '" 
-                            data-code="' . htmlspecialchars($row['code']) . '" 
-                            data-size="' . htmlspecialchars($row['size']) . '" 
-                            data-price="' . htmlspecialchars($row['price']) . '" 
-                            data-quantity="' . htmlspecialchars($row['quantity']) . '" 
-                            data-image="' . htmlspecialchars($row['image']) . '"
-                            data-table="' . htmlspecialchars($tableName) . '">
-                            Cambiar
+                                data-id="' . $row['id'] . '" 
+                                data-nombre="' . htmlspecialchars($row['nombre']) . '" 
+                                data-code="' . htmlspecialchars($row['code']) . '" 
+                                data-size="' . htmlspecialchars($row['size']) . '" 
+                                data-price="' . htmlspecialchars($row['price']) . '" 
+                                data-quantity="' . htmlspecialchars($row['quantity']) . '" 
+                                data-image="' . htmlspecialchars($row['image']) . '"
+                                data-table="' . htmlspecialchars($tableName) . '">
+                                Cambiar
                             </button>
                             <div id="editModal">
                                 <button id="closeModal">x</button>
