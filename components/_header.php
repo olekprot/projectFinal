@@ -14,14 +14,22 @@
 </head>
 <body>
     <header>
+    <p class="logo">PLAYPRO</p>
+        <input id="burger" type="checkbox" />
+
+        <label for="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
         <nav>
-            <span class="logo">PLAYPRO</span>
-            <ul>
-                <li><a href="index.php">Inicio</a></li>
-                <li><a href="orders.php">Ordenes</a></li>
-                <li><a href="newOrder.php">Orden nuevo</a></li>
-                <li><a href="newProduct.php">Producto nuevo</a></li>
-            </ul>
+            
+                <ul>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="orders.php">Ordenes</a></li>
+                    <li><a href="newOrder.php">Orden nuevo</a></li>
+                    <li><a href="newProduct.php">Producto nuevo</a></li>
+                </ul>
         </nav>
     </header>
     <main>

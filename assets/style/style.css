@@ -28,21 +28,61 @@ a{
 }
 
 /*Header styles*/
-header{
-    margin: 20px;
-    text-align: center;
-    font-size: 16px;
+header {
+    position: relative;
+    width: 100%;
+    background: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    
 }
+header input {
+    display: none;
+}
+
+/* Стили для кнопки бургер-меню */
+header label {
+    display: none; /* По умолчанию скрыто */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    z-index: 10;
+}
+
+header label span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: rgb(140, 185, 233);
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+/* Стили для меню */
+header nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
 header ul{
     display: flex;
     justify-content: center;
+    gap: 15px;
+    list-style: none;
 }
 header ul li{
     padding: 20px;
     
 }
 header ul li a{
-    color: var(--color1);
+    color: rgb(140, 185, 233);
     border-bottom: 2px solid transparent;
     font-size: 20px;
     border-bottom: 1px solid var(--color2);
@@ -56,12 +96,12 @@ header ul li a:hover{
 }
 
 .logo {
-    width: 75px;
-    height: 75px;
-    color: var(--color2);
-    border: 2px solid var(--color2);
+    width: 15vh;
+    color: rgb(140, 185, 233);
+    border: 2px solid rgb(140, 185, 233);
     padding: 3px;
     font-size: 20px;
+    text-align: center;
 }
 
 /* Table Styles */
@@ -177,6 +217,15 @@ header ul li a:hover{
     z-index: 1000;
     background-color: var(--color2);
   }
+  #editModal, #deleteModal {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+#editModal[style*="display: block"],
+#deleteModal[style*="display: block"] {
+    opacity: 1; /*NEW*/
+}
+
   #modalBackdrop {
     display: none;
     position: fixed;
@@ -206,6 +255,9 @@ header ul li a:hover{
   }
 
   /*Footer*/
+  footer {
+    margin-top: 25px;
+  }
   footer ul{
     display: flex;
     justify-content: center;
@@ -319,7 +371,115 @@ header ul li a:hover{
 
 /* Responsive */
 
+@media (max-width: 1024px) and (min-width: 768px) {
+    .table-container-download {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-container label,
+    .form-container select {
+        font-size: 14px;
+    }
+
+    header ul li {
+        padding: 10px;
+    }
+
+    .table-wrapper {
+        margin: 10px 20px;
+    }
+}
+
+
 @media (max-width: 767px) {
+    /*Burger Menu*/
+    header {
+        background-color: white;
+                justify-content: space-between;
+    }
+    header label {
+        display: flex; /* Отображаем бургер-иконку */
+        
+    }
+
+    header nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        z-index: 5;
+    }
+
+    header input:checked ~ nav {
+        transform: translateY(0); /* Показать меню при нажатии */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    header nav ul li {
+        padding: 10px;
+    }
+
+    header nav ul li a {
+        font-size: 18px;
+        color: rgb(140, 185, 233);
+    }
+
+    /* Анимация для иконки */
+    header input:checked + label span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    header input:checked + label span:nth-child(2) {
+        opacity: 0;
+    }
+    header input:checked + label span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /*End Burger Menu*/
+
+        .form-container {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    
+        .table-wrapper {
+            margin: 10px;
+        }
+    
+        #feedback-form {
+            width: 90%;
+            padding: 15px;
+        }
+    
+        .fl-table td, .fl-table th {
+            padding: 10px;
+            font-size: 14px;
+        }
+    
+        .delete-btn, .edit-btn, #confirmDelete, #cancelDelete {
+            padding: 10px 15px;
+            font-size: 14px;
+        }
+    
+        footer ul {
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+        footer ul li {
+            padding: 5px;
+        }
     .fl-table {
         display: block;
         width: 100%;
@@ -381,4 +541,9 @@ header ul li a:hover{
         display: block;
         text-align: center;
     }
-}
+
+
+
+
+        
+    }
