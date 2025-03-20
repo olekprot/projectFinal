@@ -19,7 +19,7 @@
             <th>Nombre del order</th>
         </tr>
         </thead>
-            <?php include 'allproducts.php'?>
+            <?php include 'components/_allproducts.php'?>
     </table>
 </div>
 
