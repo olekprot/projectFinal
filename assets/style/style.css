@@ -27,7 +27,7 @@ a{
     text-decoration: none;
 }
 
-/*Header styles*/
+/*<-----------------Header styles----------------->*/
 header {
     position: relative;
     width: 100%;
@@ -38,22 +38,20 @@ header {
     align-items: center;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 50px;
-    
 }
 header input {
     display: none;
 }
 
-/* Стили для кнопки бургер-меню */
+/*<-----------------Burger menu styles----------------->*/ 
 header label {
-    display: none; /* По умолчанию скрыто */
+    display: none; 
     cursor: pointer;
     flex-direction: column;
     gap: 5px;
     position: relative;
     z-index: 10;
 }
-
 header label span {
     display: block;
     width: 25px;
@@ -63,14 +61,13 @@ header label span {
     transition: 0.3s ease;
 }
 
-/* Стили для меню */
+/* <-----------------Navigation styles-----------------> */
 header nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 20px;
 }
-
 header ul{
     display: flex;
     justify-content: center;
@@ -79,7 +76,6 @@ header ul{
 }
 header ul li{
     padding: 20px;
-    
 }
 header ul li a{
     color: rgb(140, 185, 233);
@@ -88,13 +84,11 @@ header ul li a{
     border-bottom: 1px solid var(--color2);
     transition: all 0.5s ease;
 }
-
 header ul li a:hover{
     color: #324960; 
     border-bottom: 1px solid #324960;
     transform: scale(1.05);
 }
-
 .logo {
     width: 15vh;
     color: rgb(140, 185, 233);
@@ -104,51 +98,50 @@ header ul li a:hover{
     text-align: center;
 }
 
-/* Table Styles */
-
+/*<-----------------Table Styles-----------------> */
 .table-wrapper{
     margin: 10px 70px 70px;
+    overflow-x: auto;
     box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
 }
-
 .fl-table {
     border-radius: 5px;
-    font-size: 12px;
     font-weight: normal;
+    font-size: 14px; 
+    white-space: nowrap;
     border: none;
     border-collapse: collapse;
     width: 100%;
     max-width: 100%;
-    white-space: nowrap;
     background-color: var(--color1);
 }
-
 .fl-table td, .fl-table th {
     text-align: center;
     padding: 8px;
 }
-
 .fl-table td {
     border-right: 1px solid var(--color2);
     font-size: 12px;
 }
-
 .fl-table thead th {
     color: var(--color1);
     background: #4FC3A1;
 }
-
-
 .fl-table thead th:nth-child(odd) {
     color: var(--color1);
     background: #324960;
 }
-
 .fl-table tr:nth-child(even) {
     background: var(--color2);
 }
 
-/*Add new product*/
+/*<-----------------Card form----------------->*/
+.card_container {
+    display: none;
+}
+
+
+/*<-----------------Add new product----------------->*/
 #feedback-form {
     width: 80vh;
     margin: 0 auto;
@@ -156,57 +149,55 @@ header ul li a:hover{
     padding: 20px 20px 40px;
     box-shadow: 1px 4px 10px 1px #aaa;
     font-family: sans-serif;
-  }
-
-  #feedback-form form {
+}
+#feedback-form form {
     display: flex;
     flex-direction: column;
     align-items: center; 
     gap: 5px; 
-  }
-  #feedback-form h2{
+}
+#feedback-form h2{
     text-align: center;
     margin-bottom: 30px;
-  }
-  #feedback-form input {
+}
+#feedback-form input {
     margin-bottom: 15px;
-  }
-  #feedback-form input[type=text],
-  #feedback-form input[type=number] {
+}
+#feedback-form input[type=text],
+#feedback-form input[type=number] {
     height: 32px;
     padding: 6px 8px;
     width: 100%;
     border: none;
     background-color: #f3f3f3;
-  }
-  #feedback-form input[type=submit] {
+}
+#feedback-form input[type=submit] {
     margin-top: 15px;
-  }
+}
 
-  /*Descargar datos*/
-  .table-container-download {
+  /*<-----------------Descargar datos----------------->*/
+.table-container-download {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     text-align: center;
-  }
-  .form-container {
+}
+.form-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    
-  }
+    justify-content: center; 
+}
   .form-container label,
   .form-container select {
     font-size: 12px;
     margin-right: 5px;
-  }
+}
 
-  /*MODAL*/
-  #editModal,
-  #deleteModal {
+  /*<-----------------MODAL----------------->*/
+#editModal,
+#deleteModal {
     display: none;
     position: fixed;
     top: 50%;
@@ -216,17 +207,16 @@ header ul li a:hover{
     border-radius: 5px;
     z-index: 1000;
     background-color: var(--color2);
-  }
-  #editModal, #deleteModal {
+}
+#editModal, #deleteModal {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 #editModal[style*="display: block"],
 #deleteModal[style*="display: block"] {
-    opacity: 1; /*NEW*/
+    opacity: 1;
 }
-
-  #modalBackdrop {
+#modalBackdrop {
     display: none;
     position: fixed;
     top: 0;
@@ -235,9 +225,8 @@ header ul li a:hover{
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 999;
-  }
-
-  .box select {
+}
+.box select {
     width: 100%;
     background-color: #0563af;
     color: white;
@@ -248,38 +237,35 @@ header ul li a:hover{
     -webkit-appearance: button;
     appearance: button;
     outline: none;
-  }
-  
-  .box select option {
+}
+.box select option {
     padding: 20px;
-  }
+}
 
-  /*Footer*/
-  footer {
+  /*<-----------------Footer----------------->*/
+footer {
     margin-top: 25px;
-  }
-  footer ul{
+}
+footer ul{
     display: flex;
     justify-content: center;
-  }
-  footer ul li{
+}
+footer ul li{
     padding: 20px;
-  }
-  footer ul li a{
+}
+footer ul li a{
     color: var(--color1);
     border-bottom: 2px solid transparent;
     font-size: 12px;
     transition: all 0.5s ease;
-  }
-  footer ul li a:hover{
+}
+footer ul li a:hover{
     color: #324960; 
     border-bottom: 1px solid #324960;
     transform: scale(1.05);
 }
 
-
-
-/*Button*/
+/*<-----------------Button----------------->*/
 .delete-btn {
     background-color: red;
     color: var(--color1);
@@ -306,103 +292,94 @@ header ul li a:hover{
     transition: background-color 0.3s ease, transform 0.2s ease; 
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
 }
-
 #closeModal {
-        margin: 5px;
-        font-size: 13px; 
-        color: var(--color1); 
-        background-color: blue;
-        border: none; 
-        border-radius: 50%; 
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
-        transition: background-color 0.3s ease, transform 0.2s ease; 
-        float: right;
-    }
+    margin: 5px;
+    font-size: 13px; 
+    color: var(--color1); 
+    background-color: blue;
+    border: none; 
+    border-radius: 50%; 
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    float: right;
+}
+#closeModal:hover,
+.edit-btn:hover,
+.mas-btn:hover {
+    background-color: rgb(0, 0, 186); 
+    transform: scale(1.05); 
+}
+#closeModal:active,
+.edit-btn:active,
+.mas-btn:active {
+    background-color: rgb(0, 0, 132); 
+    transform: scale(0.95); 
+}
 
-    #closeModal:hover,
-    .edit-btn:hover,
-    .mas-btn:hover {
-        background-color: rgb(0, 0, 186); 
-        transform: scale(1.05); 
-    }
+#confirmDelete,
+.download-btn {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    margin: 5px 5px 0 0;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+#cancelDelete{
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    margin: 5px 0 0 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+#confirmDelete:hover,
+.download-btn:hover {
+    background-color: rgb(0, 97, 0);
+    transform: scale(1.05); 
+}
+#cancelDelete:hover {
+    background-color: rgb(107, 105, 105);
+    transform: scale(1.05); 
+}
 
-    #closeModal:active,
-    .edit-btn:active,
-    .mas-btn:active {
-        background-color: rgb(0, 0, 132); 
-        transform: scale(0.95); 
-    }
-
-    #confirmDelete,
-    .download-btn {
-        background-color: green;
-        color: white;
-        padding: 10px;
-        border: none;
-        border-radius: 3px;
-        margin: 5px 5px 0 0;
-        cursor: pointer;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
-        transition: background-color 0.3s ease, transform 0.2s ease; 
-    }
-    #cancelDelete{
-       background-color: gray;
-        color: white;
-        padding: 10px;
-        border: none;
-        border-radius: 3px;
-        margin: 5px 0 0 5px;
-        cursor: pointer;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
-        transition: background-color 0.3s ease, transform 0.2s ease; 
-    }
-    #confirmDelete:hover,
-    .download-btn:hover {
-        background-color: rgb(0, 97, 0);
-        transform: scale(1.05); 
-    }
-    #cancelDelete:hover {
-        background-color: rgb(107, 105, 105);
-        transform: scale(1.05); 
-    }
-
-/* Responsive */
+/*<----------------- Responsive-----------------> */
 
 @media (max-width: 1024px) and (min-width: 768px) {
     .table-container-download {
         flex-direction: column;
         align-items: flex-start;
     }
-
     .form-container label,
     .form-container select {
         font-size: 14px;
     }
-
     header ul li {
         padding: 10px;
     }
-
     .table-wrapper {
         margin: 10px 20px;
     }
 }
 
-
 @media (max-width: 767px) {
-    /*Burger Menu*/
+    /*<-----------------Burger Menu----------------->*/
     header {
         background-color: white;
-                justify-content: space-between;
+        justify-content: space-between;
     }
     header label {
         display: flex; /* Отображаем бургер-иконку */
-        
     }
-
     header nav {
         position: fixed;
         top: 0;
@@ -417,11 +394,9 @@ header ul li a:hover{
         transition: transform 0.3s ease;
         z-index: 5;
     }
-
     header input:checked ~ nav {
         transform: translateY(0); /* Показать меню при нажатии */
     }
-
     header nav ul {
         flex-direction: column;
         gap: 10px;
@@ -429,13 +404,11 @@ header ul li a:hover{
     header nav ul li {
         padding: 10px;
     }
-
     header nav ul li a {
         font-size: 18px;
         color: rgb(140, 185, 233);
     }
-
-    /* Анимация для иконки */
+    /*<-----------------Animation Burger Menu-----------------> */
     header input:checked + label span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -446,41 +419,37 @@ header ul li a:hover{
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /*End Burger Menu*/
-
-        .form-container {
-            flex-direction: column;
-            align-items: stretch;
-        }
-    
-        .table-wrapper {
-            margin: 10px;
-        }
-    
-        #feedback-form {
-            width: 90%;
-            padding: 15px;
-        }
-    
-        .fl-table td, .fl-table th {
-            padding: 10px;
-            font-size: 14px;
-        }
-    
-        .delete-btn, .edit-btn, #confirmDelete, #cancelDelete {
-            padding: 10px 15px;
-            font-size: 14px;
-        }
-    
-        footer ul {
-            align-items: center;
-            flex-direction: column;
-            gap: 10px;
-        }
-        footer ul li {
-            padding: 5px;
-        }
-    .fl-table {
+    /*<-----------------End Burger Menu----------------->*/
+    .form-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .table-wrapper {
+        margin: 10px;
+    }
+    #feedback-form {
+        width: 90%;
+        padding: 15px;
+    }
+    .delete-btn, .edit-btn, #confirmDelete, #cancelDelete {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    footer ul {
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+    footer ul li {
+        padding: 5px;
+    }
+    .table-wrapper {
+        display: none;
+    }
+    .card_container{
+        display: block;
+    }
+    /*.fl-table {
         display: block;
         width: 100%;
     }
@@ -541,9 +510,6 @@ header ul li a:hover{
         display: block;
         text-align: center;
     }
+*/
 
-
-
-
-        
     }

@@ -3,6 +3,9 @@
 
 
 <h2>Mis ordenes</h2>
+<div class="cards-container">
+    
+</div>
 <div class="table-wrapper">
     <table class="fl-table">
         <thead>
