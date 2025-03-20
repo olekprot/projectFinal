@@ -3,9 +3,7 @@
 
 
 <h2>Mis ordenes</h2>
-<div class="cards-container">
-    
-</div>
+<?php include 'components/_cardListOrderes.php'?>
 <div class="table-wrapper">
     <table class="fl-table">
         <thead>

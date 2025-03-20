@@ -2,6 +2,9 @@
 <?php include "components/_header.php"; ?>
 
     
+
+
+<?php include 'components/_cardList.php'?>
 <div class="table-wrapper">
     <table class="fl-table">
         <thead>
