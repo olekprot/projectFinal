@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $stmt->bind_param("i", $id);
 
         if ($stmt->execute()) {
-            echo json_encode(['status' => 'success', 'message' => "El elemento se eliminó correctamente de la tabla. $tableName!"]);
+            echo json_encode(['status' => 'success', 'message' => "El elemento se eliminó correctamente de la tabla $tableName!"]);
         } else {
             echo json_encode(['status' => 'error', 'message' => "Error al eliminar elemento:" . $stmt->error]);
         }

@@ -24,8 +24,7 @@
             <input type="number" name="quantity" placeholder="Cantidad" required>
             <input type="number" name="price" placeholder="Precio" required>
             <input type="text" name="image" placeholder="Imagine" required>
-            
-           
+                       
             <div class="box">
                 <select name="order" id="order"  required>
                     <?php foreach ($tables as $tableName): ?>

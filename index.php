@@ -3,7 +3,7 @@
 <?php include 'components/_header.php' ?>
 
 
-<h2>Sistema de control de inventario</h2>
+<h1>Sistema de control de inventario</h1>
 <?php include 'components/_cardList.php'?>
 <div class="table-wrapper">
     <table class="fl-table">

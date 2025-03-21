@@ -21,5 +21,5 @@ if ($result->num_rows > 0) {
     echo '<tr><td colspan="3">No hay ordenes.</td></tr>';
 }
 
-$conn->close();
+
 ?>

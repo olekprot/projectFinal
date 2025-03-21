@@ -2,7 +2,7 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener datos del formulario
-    $nombre_order = $_POST['nombre_order']; // nombre new order
+    $nombre_order = $_POST['nombre_order']; // nombre del orden nuevo
     $date_order = $_POST['date_order'];
     $delivery_order = $_POST['delivery_order'];
 

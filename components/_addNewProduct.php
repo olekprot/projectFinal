@@ -1,6 +1,6 @@
 <?php
     include "_config.php";
-    $TITULO = 'Add New Product';
+    $TITULO = 'Añadir nuevo producto ';
 
 
     if (isset($_GET['submitButton'])) {

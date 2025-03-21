@@ -1,33 +1,6 @@
 <?php 
     const TITULO ='Project Final Protyniak';
 
-
-/*
-    const SITENAME = 'Project Final Protyniak';
-    const TITULO = 'Project Final Protyniak';
-    function titulo($siteTitulo = true){
-        if(defined('TITULO')){
-            echo TITULO." - ";
-        }
-        if(defined('SITENAME') && $siteTitulo){
-            echo " - ";
-        }
-        if($siteTitulo){
-            SITENAME;
-        }
-       
-    }
-*/
-
-
-    //Connection to DB
-    /*LOCAL CONNECTION*/
-    /*
-    $host ='localhost';
-    $user ='root';
-    $pass ='root';
-    $dbna ='tiendazaya';
-*/
     /* WEB CONNECTION*/
     
     $host ='localhost';

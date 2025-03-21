@@ -1,16 +1,16 @@
 <?php
-include "../components/_config.php"; // Подключение к базе данных
+include "../components/_config.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-// Проверяем, переданы ли параметры
+// Comprueba si se han pasado los parámetros
     $tableName = $_POST['tableName'] ?? '';
     $format = $_POST['format'] ?? '';
 
     if (empty($tableName) || empty($format)) {
-        die("Не указано имя таблицы или формат файла. `$tableName` `$format`");
+        die("No se especificó ningún nombre de tabla ni formato de archivo. `$tableName` `$format`");
     }
 
-    // Проверяем существование таблицы
+    // Comprobación de la existencia de una tabla
     $stmt = $conn->prepare("SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ?");
     $databaseName = 'tiendazaya'; // Nombre de la basa de datos
     $stmt->bind_param("ss", $databaseName, $tableName);
@@ -20,27 +20,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->close();
 
     if ($tableExists == 0) {
-        die("Указанная таблица не существует в базе данных.");
+        die("La tabla especificada no existe en la base de datos.");
     }
 
-    // Выполняем запрос к таблице
+    // Ejecutamos una consulta a la tabla
     $query = "SELECT * FROM `$tableName`";
     $result = $conn->query($query);
 
     if (!$result || $result->num_rows == 0) {
-        die("Таблица пуста или данные недоступны.");
+        die("La tabla está vacía o no hay datos disponibles.");
     }
 
-    // Генерируем файл в зависимости от формата
+    // Generar un archivo dependiendo del formato
     switch ($format) {
         case 'csv':
-            // Заголовки для скачивания файла CSV
+            // Encabezados para descargar archivos CSV
             header('Content-Type: text/csv; charset=utf-8');
             header('Content-Disposition: attachment; filename="' . $tableName . '_data.csv"');
             
             $output = fopen('php://output', 'w');
             
-            // Записываем заголовки
+            // Escribimos los títulos
             $columns = $result->fetch_fields();
             $headers = [];
             foreach ($columns as $column) {
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             fputcsv($output, $headers);
             
-            // Записываем строки
+            // Escribimos líneas
             while ($row = $result->fetch_assoc()) {
                 fputcsv($output, $row);
             }
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             break;
 
         case 'json':
-            // Заголовки для JSON
+            // Titulos JSON
             header('Content-Type: application/json; charset=utf-8');
             header('Content-Disposition: attachment; filename="' . $tableName . '_data.json"');
             
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             break;
 
         default:
-            die("Неподдерживаемый формат.");
+            die("Formato no compatible.");
     }
 
     $conn->close();

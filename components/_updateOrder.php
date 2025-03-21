@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!preg_match('/^[a-zA-Z0-9_]+$/', $tableName)) {
         die("Nombre de tabla no válido!");
     }
+
     //Obtención de datos de una solicitud POST
     $id = $_POST['id'];
     $nombre = $_POST['nombre'];
@@ -19,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $quantity = $_POST['quantity'];
     $image = $_POST['image'];
 
-    
     // Actualización de datos
     $stmt = $conn->prepare("UPDATE `$tableName` SET nombre = ?, code = ?, size = ?, price = ?, quantity = ?, image = ? WHERE id = ?");
     $stmt->bind_param("sssdiss", $nombre, $code, $size, $price, $quantity, $image, $id);
@@ -29,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo "Un error ocurrió al actualizar los datos: " . $stmt->error;
     }
-
 
     $stmt->close();
     $conn->close();

@@ -12,6 +12,12 @@ body{
     font-family: "Poppins", sans-serif;
     background: rgb(140, 185, 233);
 }
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color2);
+    margin-bottom: 20px;
+}
 h2{
     text-align: center;
     font-size: 18px;
@@ -257,7 +263,7 @@ header ul li a:hover{
 .table-container-download {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 10px;
     text-align: center;
@@ -531,7 +537,7 @@ footer ul li a:hover{
         margin: 10px;
     }
     #feedback-form {
-        width: 100%;
+        width: 95%;
         padding: 15px;
     }
     .delete-btn, .edit-btn, #confirmDelete, #cancelDelete {

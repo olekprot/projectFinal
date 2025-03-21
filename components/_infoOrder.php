@@ -23,9 +23,25 @@ if (isset($_GET['nombre_order'])) {
                         <input class="download-btn" type="submit" value="Descargar">
                     </form>';
                 echo '</div>';
-        echo '</div>';
+        echo '</div> 
+              <div class="table-wrapper">
+                    <table class="fl-table">
+                        <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Codigo</th>
+                            <th>Talla</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Precio total</th>
+                        </tr>
+                        </thead>
+                <tbody>';
+
             while ($row = $result->fetch_assoc()) {
-                    echo '<tr>
+                echo '
+                    <tr>
                         <td><img src="' . htmlspecialchars($row['image']) . '" alt="Image"></td>
                         <td>' . htmlspecialchars($row['nombre']) . '</td>
                         <td>' . htmlspecialchars($row['code']) . '</td>

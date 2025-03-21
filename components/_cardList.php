@@ -39,11 +39,10 @@
                     </div>';
                 }
             }
-            
         }
         echo '</div>';
     } else {
         echo "No hay datos en la base de datos.";
     }
-
+    $conn->close();
 ?>
