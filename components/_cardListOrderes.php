@@ -9,9 +9,9 @@ if ($result->num_rows > 0) {
         echo '<div class="card-order">';
             echo '<p> Nombre del orden: <b>' . htmlspecialchars($row['nombre_order']) . '</b></p>';
             echo '<p> Fecha de entrega: <b>' . htmlspecialchars($row['date_order']) . '</b></p>';
-            echo '<p> Precio de envio: <b>' . htmlspecialchars($row['delivery_order']) . 'euro </b></p>';
-            echo '<a class="mas-btn" href="order.php?nombre_order=' . urlencode($row['nombre_order']) . '">Mas informacion</a>';
-
+            echo '<p> Precio de envio: <b>' . htmlspecialchars($row['delivery_order']) . ' euro </b></p>';
+            echo '<a class="mas-btn desktop" href="order.php?nombre_order=' . urlencode($row['nombre_order']) . '">Mas informacion</a>';
+            echo '<a class="mas-btn mobile" href="orderMobile.php?nombre_order=' . urlencode($row['nombre_order']) . '">Mas informacion</a>';
         echo '</div>';
 
     }

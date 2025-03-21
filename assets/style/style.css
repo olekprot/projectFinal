@@ -104,6 +104,10 @@ header ul li a:hover{
     overflow-x: auto;
     box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
 }
+.fl-table img {
+    width: 80px;
+    aspect-ratio: 1/1;
+}
 .fl-table {
     border-radius: 5px;
     font-weight: normal;
@@ -161,26 +165,31 @@ header ul li a:hover{
     margin-bottom: 5px;
 }
 
-.card-product {
+.card-product-container {
     flex: 1 1 calc(100% - 20px);
-    min-height: 40vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
-    align-items: center;
+    align-items: stretch;
     padding: 10px;
     border: 1px solid rgb(140, 185, 233);
     border-radius: 5px;
     background-color: var(--color1);
     text-align: center;
-    font-size: 13px;
     color: black;
     overflow-wrap: anywhere;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     margin-bottom: 5px;
 }
+.card-product {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 calc(100% - 20px);
+    justify-content: space-between; 
+    align-items: center;
+}
 .card-product img {
-    width: 50%;
+    width: 75px;
+    aspect-ratio: 1/1;
 }
 
 .card-product-list {
@@ -196,14 +205,24 @@ header ul li a:hover{
 }
 
 .card-product-list p {
-    font-size: 15px;
+    font-size: 12px;
     color: rgb(50, 50, 50);
 }
+.button_mobile {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    justify-content: center;
+}
+.button_mobile button {
+    margin-right: 8px;
+}
+
 
 /*<-----------------Add new product----------------->*/
 #feedback-form {
     width: 80vh;
-    margin: 0 auto;
+    margin: 5px auto;
     background-color: var(--color2);
     padding: 20px 20px 40px;
     box-shadow: 1px 4px 10px 1px #aaa;
@@ -252,6 +271,13 @@ header ul li a:hover{
   .form-container select {
     font-size: 12px;
     margin-right: 5px;
+}
+
+.mobile {
+    display: none;
+}
+.desktop {
+    display: block;
 }
 
   /*<-----------------MODAL----------------->*/
@@ -467,6 +493,9 @@ footer ul li a:hover{
         font-size: 18px;
         color: rgb(140, 185, 233);
     }
+    h3 {
+        text-align: center;
+    }
     /*<-----------------Animation Burger Menu-----------------> */
     header input:checked + label span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
@@ -477,7 +506,22 @@ footer ul li a:hover{
     header input:checked + label span:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px);
     }
+    #editModal{
+        width: 95%;
+        font-size: 12px;
+    }
+    .form-container form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 
+    .mobile {
+        display: block;
+    }
+    .desktop {
+        display: none;
+    }
     /*<-----------------End Burger Menu----------------->*/
     .form-container {
         flex-direction: column;
@@ -487,7 +531,7 @@ footer ul li a:hover{
         margin: 10px;
     }
     #feedback-form {
-        width: 90%;
+        width: 100%;
         padding: 15px;
     }
     .delete-btn, .edit-btn, #confirmDelete, #cancelDelete {

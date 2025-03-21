@@ -22,18 +22,20 @@
             if ($tableResult->num_rows > 0) {
                 // Datas del table
                 while ($data = $tableResult->fetch_assoc()) {
-                    echo '<div class="card-product">
-                        <img src="'.$data['image'].'">
-                        <div class="card-product-list">
-                            <p> Nombre:<b> '.$data['nombre'].'</b></p>
-                            <p> Codigo:<b> '.$data['code'].'</b></p>
-                            <p> Talla:<b> '.$data['size'].'</b></p>
-                            <p> Precio:<b> '.$data['price'].' euro</b></p>
-                            <p> Cantidad:<b> '.$data['quantity'].'</b></p>
-                            <p> Suma:<b> '.$data['price']*$data['quantity'].' euro</b></p> 
-                            <p>Nombre del orden:<b> '.$tableName.'</b></p>
+                    echo '
+                    <div class="card-product-container">
+                        <div class="card-product">
+                            <img src="'.$data['image'].'">
+                            <div class="card-product-list">
+                                <p> Nombre:<b> '.$data['nombre'].'</b></p>
+                                <p> Codigo:<b> '.$data['code'].'</b></p>
+                                <p> Talla:<b> '.$data['size'].'</b></p>
+                                <p> Precio:<b> '.$data['price'].' euro</b></p>
+                                <p> Cantidad:<b> '.$data['quantity'].'</b></p>
+                                <p> Suma:<b> '.$data['price']*$data['quantity'].' euro</b></p> 
+                                <p>Nombre del orden:<b> '.$tableName.'</b></p>
+                            </div>
                         </div>
-                        
                     </div>';
                 }
             }
