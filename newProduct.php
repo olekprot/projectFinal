@@ -1,4 +1,4 @@
-<? const TITULO ='Product nuevo';?>
+<? const TITULO ='Añadir nuevo producto';?>
 <?php include "components/_config.php"; ?>
 <?php include "components/_header.php"; ?>
 <?php 
@@ -15,7 +15,7 @@
     }
 ?>
 <div id="feedback-form">
-    <h2 class="header">New Product</h2>
+    <h2 class="header">Añadir nuevo producto</h2>
     <div>
         <form action="components/_addNewProduct.php" method="get">
             <input type="text" name="nombre" placeholder="Nombre" required>
@@ -34,7 +34,7 @@
                     <?php endforeach; ?>
                 </select>
             </div>          
-            <input class="mas-btn" type="submit" value="Agregar nuevo producto" name="submitButton">
+            <input class="mas-btn" type="submit" value="Agregar" name="submitButton">
         </form>
     </div>
 </div>
