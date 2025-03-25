@@ -1,6 +1,7 @@
 :root {
     --color1: white;
     --color2: #f8f8f8; 
+    --colorprimary: #rgb(140, 185, 233);;
 }
 
 *{
@@ -10,7 +11,7 @@
 }
 body{
     font-family: "Poppins", sans-serif;
-    background: rgb(140, 185, 233);
+    background: var(--colorprimary);
 }
 h1 {
     text-align: center;
@@ -62,7 +63,7 @@ header label span {
     display: block;
     width: 25px;
     height: 3px;
-    background: rgb(140, 185, 233);
+    background: var(--colorprimary);
     border-radius: 3px;
     transition: 0.3s ease;
 }
@@ -84,7 +85,7 @@ header ul li{
     padding: 20px;
 }
 header ul li a{
-    color: rgb(140, 185, 233);
+    color: var(--colorprimary);
     border-bottom: 2px solid transparent;
     font-size: 20px;
     border-bottom: 1px solid var(--color2);
@@ -98,7 +99,7 @@ header ul li a:hover{
 .logo {
     width: 15vh;
     color: rgb(140, 185, 233);
-    border: 2px solid rgb(140, 185, 233);
+    border: 2px solid var(--colorprimary);
     padding: 3px;
     font-size: 20px;
     text-align: center;
@@ -159,7 +160,7 @@ header ul li a:hover{
     flex-direction: column;
     align-items: center;
     padding: 15px;
-    border: 1px solid rgb(140, 185, 233);
+    border: 1px solid var(--colorprimary);
     border-radius: 5px;
     background-color: var(--color1);
     text-align: center;
@@ -177,7 +178,7 @@ header ul li a:hover{
     flex-direction: column;
     align-items: stretch;
     padding: 10px;
-    border: 1px solid rgb(140, 185, 233);
+    border: 1px solid var(--colorprimary);
     border-radius: 5px;
     background-color: var(--color1);
     text-align: center;
@@ -201,7 +202,7 @@ header ul li a:hover{
 .card-product-list {
     display: flex;
     flex-direction: column;
-    border: 1px solid rgb(140, 185, 233);
+    border: 1px solid var(--colorprimary);
     border-radius: 5px;
     width: 100%;
     padding: 10px;
@@ -497,7 +498,7 @@ footer ul li a:hover{
     }
     header nav ul li a {
         font-size: 18px;
-        color: rgb(140, 185, 233);
+        color: var(--colorprimary);
     }
     h3 {
         text-align: center;
