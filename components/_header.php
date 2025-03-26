@@ -14,7 +14,7 @@
 </head>
 <body>
     <header>
-    <p class="logo">PLAYPRO</p>
+        <p class="logo"><a href="index.php">PLAYPRO</a></p>
         <input id="burger" type="checkbox" />
         <label for="burger">
             <span></span>

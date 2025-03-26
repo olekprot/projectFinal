@@ -2,12 +2,19 @@
     const TITULO ='Project Final Protyniak';
     
 
-    /* WEB CONNECTION*/
+   /*WEB CONNECTION*/
     
     $host ='localhost';
     $user ='myprotyniac4';
     $pass ='H6f4C2XB';
     $dbna ='tiendazaya';
+
+
+    /*Local connection*/ 
+    /*$host ='localhost';
+    $user ='root';
+    $pass ='root';
+    $dbna ='tiendazaya';*/
 
     // Connect
     $conn = mysqli_connect($host, $user, $pass, $dbna);
